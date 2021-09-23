@@ -5,10 +5,8 @@ var search = function(nums, target) {
 };
 
 let low = 0, high = nums.length - 1;
-let middle = Math.floor((high - low) / 2);
-if (middle = target) {
-  return middle;
-} else if (target < nums[middle]) {
+let middle = low + Math.floor((high - low + 1) / 2);
+if (target < nums[middle]) {
   high = mid - 1
 } else {
   low = middle;
