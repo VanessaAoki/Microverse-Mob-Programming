@@ -1,7 +1,3 @@
-/**
- * @param {number} x
- * @return {number}
- */
 var reverse = function(x) {   
 var strReturn = "";     
 var result = 0;
