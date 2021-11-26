@@ -1,17 +1,26 @@
-// 115 ms
+// Not binary solution
 var search = function(nums, target) {
   let awnser  = nums.indexOf(target);
   return awnser === undefined ? -1 : awnser
 };
 
-let low = 0, high = nums.length - 1;
-let middle = low + Math.floor((high - low + 1) / 2);
-if (target < nums[middle]) {
-  high = mid - 1
-} else {
-  low = middle;
+// Binary solution
+var search = function(nums, target) { 
+    let first = 0
+    let last = nums.length - 1
+
+    while (first <= last) {
+        let mid = Math.floor(((first + last) / 2))
+        if(nums[mid] < target){
+            first = mid + 1
+        } else if(nums[mid] > target){
+            last = mid - 1
+        } else{
+            return mid
+        }
+    }
+    return - 1
 };
-return nums[low] == target ? low : -1;
 
 
 [-1,0,3,5,9,12], 9
